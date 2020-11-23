@@ -10,5 +10,4 @@ workflows:
           tag: 'latest'
       - heroku/push-docker-image:
           app-name: $HEROKU_APP_NAME
-          pre-deploy: check-authentication
         
