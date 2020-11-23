@@ -8,12 +8,11 @@ workflows:
       - docker/publish:
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
           tag: 'latest'
-      - deploy:
-          executor: heroku/default
-          steps:
-            - checkout
-            - heroku/install
-            - heroku/push-docker-image :
-                -app-name: $HEROKU_APP_NAME
+workflows:
+  heroku_deploy:
+    jobs:
+      - heroku/push-docker-image:
+        app-name: $HEROKU_APP_NAME
+            
 
         
