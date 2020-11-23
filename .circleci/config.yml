@@ -10,4 +10,11 @@ workflows:
           tag: 'latest'
       - heroku/push-docker-image:
           app-name: $HEROKU_APP_NAME
+          steps:
+          - checkout
+          - run:
+            name: Deploy master to heroku
+            command: |
+                git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
         
