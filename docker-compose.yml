@@ -1,7 +1,7 @@
 version: "3"
 services:
   coursematerial:
-    image: jakousa/docker-hy
+    image: laurihakala/docker-hy.github.io
     ports:
       - 4000:80
     container_name: coursematerial
@@ -12,4 +12,5 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: watchtower
-    command: --label-enable
+    environment:
+        - WATCHTOWER_LABEL_ENABLE=--label-enable
