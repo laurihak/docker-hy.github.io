@@ -1,7 +1,7 @@
 version: "3"
 services:
   coursematerial:
-    image: laurihakala/docker-hy.github.io
+    image: laurihakala/dockerpipeline
     ports:
       - 4000:80
     container_name: coursematerial
