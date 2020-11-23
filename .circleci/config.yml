@@ -8,5 +8,5 @@ workflows:
       - docker/publish:
           image: laurihakala/dockerpipeline
           tag: 'latest'
-      - heroku/push-docker-image:
+      - heroku/deploy-via-git:
           app-name: $HEROKU_APP_NAME
